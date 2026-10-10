@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+    --color-cream: #faf7f0;
+    --color-sand: #f1eadb;
+
+    --color-forest-50: #eff7f1;
+    --color-forest-100: #d8ecdd;
+    --color-forest-200: #b3d9bf;
+    --color-forest-300: #84bf99;
+    --color-forest-400: #55a072;
+    --color-forest-500: #358456;
+    --color-forest-600: #256944;
+    --color-forest-700: #1e5438;
+    --color-forest-800: #1a432f;
+    --color-forest-900: #153728;
+    --color-forest-950: #0b1f16;
+
+    --color-gold-50: #fdf8ec;
+    --color-gold-100: #f8ecc9;
+    --color-gold-200: #f1d78f;
+    --color-gold-300: #e9bd55;
+    --color-gold-400: #e2a52f;
+    --color-gold-500: #c9861f;
+    --color-gold-600: #a96619;
+    --color-gold-700: #874a18;
+
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) }
+    50% { transform: translateY(-14px) }
+}
+
+@keyframes marquee {
+    from { transform: translateX(0) }
+    to { transform: translateX(-50%) }
+}
+
+@layer base {
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+    body { @apply bg-cream text-forest-950 antialiased; }
+    h1, h2, h3, .font-display { font-family: var(--font-display); letter-spacing: -0.015em; }
+    [x-cloak] { display: none !important; }
+    ::selection { @apply bg-forest-200 text-forest-900; }
+}
+
+@utility btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+@layer components {
+    .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+    .btn-primary { @apply btn bg-forest-700 text-white shadow-lg shadow-forest-900/15 hover:bg-forest-800 hover:-translate-y-0.5 focus-visible:ring-forest-300; }
+    .btn-gold { @apply btn bg-gold-400 text-forest-950 shadow-lg shadow-gold-600/20 hover:bg-gold-300 hover:-translate-y-0.5 focus-visible:ring-gold-200; }
+    .btn-outline { @apply btn border border-forest-700/20 bg-white text-forest-800 hover:border-forest-700 hover:bg-forest-50 focus-visible:ring-forest-200; }
+    .btn-wa { @apply btn bg-[#25D366] text-white shadow-lg shadow-green-700/20 hover:bg-[#1ebe5b] hover:-translate-y-0.5 focus-visible:ring-green-200; }
+
+    .eyebrow { @apply inline-flex items-center gap-2 rounded-full bg-forest-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-forest-700; }
+    .section-title { @apply font-display text-3xl font-semibold text-forest-900 sm:text-4xl lg:text-[2.75rem] lg:leading-tight; }
+
+    .card { @apply rounded-3xl border border-forest-900/5 bg-white shadow-[0_1px_2px_rgba(16,40,28,.04),0_8px_24px_-12px_rgba(16,40,28,.12)]; }
+
+    .input { @apply block w-full rounded-xl border border-forest-900/10 bg-white px-4 py-3 text-sm text-forest-950 placeholder:text-forest-900/40 transition focus:border-forest-500 focus:outline-none focus:ring-4 focus:ring-forest-500/15; }
+    .label { @apply mb-1.5 block text-sm font-semibold text-forest-900; }
+
+    .prose-herbal { @apply text-[1.05rem] leading-relaxed text-forest-950/80; }
+    .prose-herbal h2 { @apply mt-10 mb-3 text-2xl font-semibold text-forest-900; }
+    .prose-herbal h3 { @apply mt-8 mb-2 text-xl font-semibold text-forest-900; }
+    .prose-herbal p { @apply my-4; }
+    .prose-herbal ul { @apply my-4 list-disc space-y-1.5 pl-6 marker:text-forest-500; }
+    .prose-herbal ol { @apply my-4 list-decimal space-y-1.5 pl-6; }
+    .prose-herbal a { @apply font-semibold text-forest-700 underline decoration-gold-400 decoration-2 underline-offset-4 hover:text-forest-900; }
+    .prose-herbal strong { @apply font-semibold text-forest-900; }
+    .prose-herbal blockquote { @apply my-6 border-l-4 border-gold-400 bg-gold-50 py-3 pr-4 pl-5 italic; }
+    .prose-herbal img { @apply my-6 rounded-2xl; }
+
+    .reveal { @apply translate-y-6 opacity-0 transition duration-700 ease-out; }
+    .reveal.is-visible { @apply translate-y-0 opacity-100; }
+
+    .no-scrollbar { scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+}
+
+/* ------------------------------ Admin ------------------------------ */
+@utility a-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-4 disabled:opacity-60;
+}
+
+@layer components {
+    .a-card { @apply rounded-2xl border border-slate-200/70 bg-white shadow-sm; }
+    .a-input { @apply block w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition focus:border-forest-500 focus:outline-none focus:ring-4 focus:ring-forest-500/15; }
+    .a-label { @apply mb-1.5 block text-sm font-semibold text-slate-700; }
+    .a-btn-primary { @apply a-btn bg-forest-700 text-white hover:bg-forest-800 focus-visible:ring-forest-300; }
+    .a-btn-light { @apply a-btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus-visible:ring-slate-200; }
+    .a-btn-danger { @apply a-btn bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-200; }
+    .a-table { @apply w-full text-left text-sm; }
+    .a-table thead th { @apply bg-slate-50 px-4 py-3 text-xs font-bold tracking-wider whitespace-nowrap text-slate-500 uppercase; }
+    .a-table tbody td { @apply border-t border-slate-100 px-4 py-3 align-middle; }
+    .a-table tbody tr { @apply transition hover:bg-slate-50/70; }
+    .a-badge { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold whitespace-nowrap; }
+    .a-icon-btn { @apply grid size-9 place-items-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-slate-900; }
+}
