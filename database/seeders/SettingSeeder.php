@@ -10,12 +10,12 @@ class SettingSeeder extends Seeder
     public function run(): void
     {
         $settings = [
-            'site_name' => 'Varash Herbal',
+            'site_name' => 'Herbal Asli Indonesia',
             'site_tagline' => 'Sehat Tanpa Minum Obat',
             'company_name' => 'PT. Varash Saddan Nusantara',
             'about_short' => 'Minyak herbal dengan saripati rempah asli pertama di Indonesia. Diracik dari 108 tanaman berkhasiat warisan leluhur Bali, terdaftar BPOM & bersertifikat Halal MUI.',
             'whatsapp_number' => '6282210810856',
-            'whatsapp_admin_name' => 'Admin Varash',
+            'whatsapp_admin_name' => 'Admin Herbal Asli Indonesia',
             'phone' => '0822-1081-0856',
             'email' => 'info@varashherbal.com',
             'address' => 'Jl. Ahmad Yani Utara, Sriti Residence No 88, Denpasar Utara, Bali',
@@ -31,9 +31,9 @@ class SettingSeeder extends Seeder
             'facebook' => 'https://www.facebook.com/profile.php?id=61578141444082',
             'tiktok' => 'https://www.tiktok.com/@varashsaddannusantara',
             'youtube' => 'https://youtube.com/c/VarashSaddanNusantara',
-            'meta_title' => 'Varash Herbal — Minyak Herbal Alami 108 Tanaman Berkhasiat | BPOM & Halal',
-            'meta_description' => 'Toko resmi produk herbal Varash: Varash Classic, Varash Natural Oil, Avara, suplemen & perawatan alami. 100% original, BPOM & Halal MUI. Pesan mudah via WhatsApp.',
-            'meta_keywords' => 'minyak varash, varash classic, minyak herbal, obat herbal alami, minyak balur, herbal bali, produk herbal bpom',
+            'meta_title' => 'Herbal Asli Indonesia — Minyak Herbal Alami 108 Tanaman Berkhasiat | BPOM & Halal',
+            'meta_description' => 'Herbal Asli Indonesia, toko produk herbal Varash original: Varash Classic, Varash Natural Oil, Avara, suplemen & perawatan alami. 100% original, BPOM & Halal MUI. Pesan mudah via WhatsApp.',
+            'meta_keywords' => 'herbal asli indonesia, minyak varash, varash classic, minyak herbal, obat herbal alami, minyak balur, herbal bali, produk herbal bpom',
             'google_site_verification' => '',
             'google_analytics_id' => '',
         ];

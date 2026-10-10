@@ -8,7 +8,7 @@
 @endif
 
 @section('content')
-<x-page-hero title="Artikel Kesehatan" eyebrow="Blog Varash" subtitle="Tips hidup sehat alami, edukasi herbal Nusantara, dan panduan pemakaian produk." :crumbs="[['label' => 'Artikel']]" />
+<x-page-hero title="Artikel Kesehatan" :eyebrow="'Blog '.setting('site_name')" subtitle="Tips hidup sehat alami, edukasi herbal Nusantara, dan panduan pemakaian produk." :crumbs="[['label' => 'Artikel']]" />
 
 <section class="container-x py-10 sm:py-14">
     <form method="GET" class="mb-8 flex max-w-md gap-2">

@@ -119,25 +119,25 @@
                 <x-icon name="menu" class="size-6" />
             </button>
 
-            <a href="{{ route('home') }}" class="flex shrink-0 items-center gap-2.5" aria-label="{{ $siteName }} - Beranda">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo {{ $siteName }}" width="44" height="43" class="size-10 lg:size-11">
-                <span class="leading-none">
-                    <span class="block font-display text-xl font-semibold text-forest-900 lg:text-2xl">{{ $siteName }}</span>
+            <a href="{{ route('home') }}" class="flex min-w-0 items-center gap-2 sm:shrink-0 sm:gap-2.5" aria-label="{{ $siteName }} - Beranda">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo {{ $siteName }}" width="44" height="43" class="size-9 shrink-0 sm:size-10 lg:size-11">
+                <span class="min-w-0 leading-none">
+                    <span class="block font-display text-[1.05rem] leading-tight font-semibold text-forest-900 sm:text-xl lg:text-2xl">{{ $siteName }}</span>
                     <span class="hidden text-[0.65rem] font-semibold tracking-[0.2em] text-gold-600 uppercase sm:block">{{ setting('site_tagline') }}</span>
                 </span>
             </a>
 
-            <nav class="ml-6 hidden items-center gap-1 lg:flex" aria-label="Navigasi utama">
+            <nav class="ml-4 hidden items-center gap-0.5 lg:flex xl:ml-6 xl:gap-1" aria-label="Navigasi utama">
                 @foreach ($nav as $item)
                     <a href="{{ route($item['route']) }}" @class([
-                        'rounded-full px-4 py-2 text-sm font-semibold transition',
+                        'rounded-full px-3 py-2 text-sm font-semibold whitespace-nowrap transition xl:px-4',
                         'bg-forest-100 text-forest-800' => request()->routeIs($item['active']),
                         'text-forest-900/70 hover:text-forest-900 hover:bg-forest-50' => ! request()->routeIs($item['active']),
                     ]) @if (request()->routeIs($item['active'])) aria-current="page" @endif>{{ $item['label'] }}</a>
                 @endforeach
             </nav>
 
-            <div class="ml-auto flex items-center gap-1 sm:gap-2">
+            <div class="ml-auto flex shrink-0 items-center gap-0.5 sm:gap-2">
                 <button type="button" @click="search = !search; $nextTick(() => $refs.searchInput?.focus())" class="rounded-full p-2.5 text-forest-900 hover:bg-forest-100" aria-label="Cari produk">
                     <x-icon name="search" />
                 </button>
@@ -146,7 +146,7 @@
                     <span x-cloak x-show="$store.cart.count > 0" x-text="$store.cart.count" :class="$store.cart.bump && 'scale-125'"
                           class="absolute -top-0.5 -right-0.5 grid min-w-5 place-items-center rounded-full bg-gold-400 px-1 text-[0.65rem] font-bold text-forest-950 ring-2 ring-cream transition-transform"></span>
                 </a>
-                <a href="{{ wa_link('Halo Admin, saya ingin konsultasi produk Varash') }}" target="_blank" rel="noopener" class="btn-wa ml-1 hidden !py-2.5 sm:inline-flex">
+                <a href="{{ wa_link('Halo Admin, saya ingin konsultasi produk Varash') }}" target="_blank" rel="noopener" class="btn-wa ml-1 hidden !py-2.5 sm:inline-flex lg:hidden xl:inline-flex">
                     <x-icon name="whatsapp" class="size-4" /> Konsultasi
                 </a>
             </div>

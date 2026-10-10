@@ -9,7 +9,7 @@
 <section class="container-x grid grid-cols-1 gap-8 py-12 lg:grid-cols-5">
     <div class="space-y-4 lg:col-span-2">
         @foreach ([
-            ['whatsapp', 'WhatsApp', setting('phone').' ('.setting('whatsapp_admin_name').')', wa_link('Halo Admin Varash')],
+            ['whatsapp', 'WhatsApp', setting('phone').' ('.setting('whatsapp_admin_name').')', wa_link('Halo Admin '.setting('site_name'))],
             ['mail', 'Email', setting('email'), 'mailto:'.setting('email')],
             ['map', 'Alamat', setting('address'), null],
             ['clock', 'Jam Operasional', setting('business_hours'), null],

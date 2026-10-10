@@ -1,6 +1,6 @@
-# Varash Herbal — Toko Online Produk Herbal (Laravel 13 + Blade)
+# Herbal Asli Indonesia — Toko Online Produk Herbal (Laravel 13 + Blade)
 
-Website toko produk herbal Varash yang SEO-friendly, responsif di semua perangkat, dengan checkout langsung ke WhatsApp, newsletter subscriber, notifikasi admin, dan activity log lengkap.
+Website toko **Herbal Asli Indonesia** untuk produk herbal Varash yang SEO-friendly, responsif di semua perangkat, dengan checkout langsung ke WhatsApp, newsletter subscriber, notifikasi admin, dan activity log lengkap.
 
 ## Fitur
 

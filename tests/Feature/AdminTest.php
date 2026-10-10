@@ -119,7 +119,7 @@ class AdminTest extends TestCase
 
     public function test_settings_update_changes_checkout_whatsapp_number(): void
     {
-        $this->actingAs($this->admin)->put(route('admin.settings.update'), ['whatsapp_number' => '0811-2222-3333', 'site_name' => 'Varash Herbal'])->assertSessionHas('success');
+        $this->actingAs($this->admin)->put(route('admin.settings.update'), ['whatsapp_number' => '0811-2222-3333', 'site_name' => 'Herbal Asli Indonesia'])->assertSessionHas('success');
         $this->assertSame('https://wa.me/6281122223333', wa_link());
         $this->assertDatabaseHas('activity_logs', ['log_name' => 'setting', 'event' => 'updated']);
     }

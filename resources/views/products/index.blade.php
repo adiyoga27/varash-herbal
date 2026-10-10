@@ -5,7 +5,7 @@
     $sorts = ['' => 'Rekomendasi', 'popular' => 'Terpopuler', 'newest' => 'Terbaru', 'price_asc' => 'Harga Terendah', 'price_desc' => 'Harga Tertinggi'];
 @endphp
 
-@section('title', $currentCategory ? $currentCategory->name.' Original' : 'Katalog Produk Herbal Varash')
+@section('title', $currentCategory ? $currentCategory->name.' Original' : 'Katalog Produk Herbal Original')
 @section('description', $currentCategory?->description ?: 'Belanja produk herbal Varash original: minyak balur 108 tanaman, suplemen, minuman herbal, dan perawatan alami. BPOM & Halal, pesan mudah via WhatsApp.')
 @if ($search || request('sort') || $products->currentPage() > 1)
     @section('robots', 'noindex, follow')
@@ -22,7 +22,7 @@
 @endpush
 
 @section('content')
-<x-page-hero :title="$title" eyebrow="Toko Resmi Varash"
+<x-page-hero :title="$title" :eyebrow="setting('site_name')"
     :subtitle="$currentCategory?->description ?? 'Produk herbal original langsung dari pabrik — terdaftar BPOM & bersertifikat Halal MUI.'"
     :crumbs="array_filter([['label' => 'Produk', 'url' => route('products.index')], $currentCategory ? ['label' => $currentCategory->name] : null])" />
 
